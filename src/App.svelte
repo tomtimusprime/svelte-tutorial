@@ -4,6 +4,12 @@
 	let firstName = "Tom"
 	let lastName = "Black"
 	$: fullName = `${firstName} ${lastName}`;
+	let people = [
+		{fullName: "Tom Black", beltColor: "Black", id: 1},
+		{fullName: "Ashley Black", beltColor: "Black", id: 2},
+		{fullName: "David Richards", beltColor: "Orange", id: 3},
+		{fullName: "Shayne Black", beltColor: "Green", id: 4}
+	]
 
 	const handleClick = () => {
 		if(beltColor === "orange"){
@@ -29,6 +35,12 @@
 	<input type="text" bind:value={beltColor}>
 	<input type="text" bind:value={firstName}>
 	<input type="text" bind:value={lastName}>
+
+	{#each people as person (person.id)}
+		<div>Name: {person.fullName}</div>
+		<div>Belt Color: {person.beltColor}</div>
+		<br>
+	{/each}
 	<!-- on:input={handleInput} value={beltColor} -->
 </main>
 
