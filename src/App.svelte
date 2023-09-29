@@ -40,6 +40,8 @@
 		<div>Name: {person.fullName}</div>
 		<div>Belt Color: {person.beltColor}</div>
 		<br>
+	{:else}
+		<div> There's no people to show at this time...</div>
 	{/each}
 	<!-- on:input={handleInput} value={beltColor} -->
 </main>
