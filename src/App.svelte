@@ -24,6 +24,10 @@
 	const handleInput = (e) => {
 		beltColor = e.target.value;
 	}
+
+	const handleDelete = (id) => {
+		people = people.filter((person) => person.id != id)
+	}
 </script>
 
 <main>
@@ -39,6 +43,7 @@
 	{#each people as person (person.id)}
 		<div>Name: {person.fullName}</div>
 		<div>Belt Color: {person.beltColor}</div>
+		<button on:click={() => {handleDelete(person.id)}}>Delete</button>
 		<br>
 	{:else}
 		<div> There's no people to show at this time...</div>
