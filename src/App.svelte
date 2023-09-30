@@ -39,6 +39,7 @@
 	<input type="text" bind:value={beltColor}>
 	<input type="text" bind:value={firstName}>
 	<input type="text" bind:value={lastName}>
+	<br>
 
 	{#each people as person (person.id)}
 		<div>Name: {person.fullName}</div>
